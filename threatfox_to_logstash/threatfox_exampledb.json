@@ -1,0 +1,342 @@
+{
+    "153618": [
+        {
+            "ioc_value": "salaciahaumea.top",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 06:29:58",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153617": [
+        {
+            "ioc_value": "moskomosto.top",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 06:29:58",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153616": [
+        {
+            "ioc_value": "mideliidalgo.top",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 06:29:58",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153615": [
+        {
+            "ioc_value": "lopokedraito.xyz",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 06:29:58",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153614": [
+        {
+            "ioc_value": "indifigatualim.top",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 06:29:58",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153613": [
+        {
+            "ioc_value": "fingopaskilem.buzz",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 06:29:58",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153612": [
+        {
+            "ioc_value": "asertinofase.top",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 06:29:58",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153599": [
+        {
+            "ioc_value": "feedbackportal.pro",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-25 05:41:07",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153419": [
+        {
+            "ioc_value": "gremlinkremlin.download",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-24 17:41:23",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153414": [
+        {
+            "ioc_value": "nothingnewhere.life",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-24 17:21:37",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153131": [
+        {
+            "ioc_value": "worldextentions.com",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.cobalt_strike",
+            "malware_alias": "Agentemis,BEACON,CobaltStrike",
+            "malware_printable": "Cobalt Strike",
+            "first_seen_utc": "2021-06-24 07:47:07",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "CobaltStrike",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153130": [
+        {
+            "ioc_value": "vdomain.serveblog.net",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.cobalt_strike",
+            "malware_alias": "Agentemis,BEACON,CobaltStrike",
+            "malware_printable": "Cobalt Strike",
+            "first_seen_utc": "2021-06-24 07:45:37",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": "https://twitter.com/Unit42_Intel/status/1407884847935373312",
+            "tags": "CobaltStrike",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "153129": [
+        {
+            "ioc_value": "akamaistats.com",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.cobalt_strike",
+            "malware_alias": "Agentemis,BEACON,CobaltStrike",
+            "malware_printable": "Cobalt Strike",
+            "first_seen_utc": "2021-06-24 07:45:37",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": "https://twitter.com/Unit42_Intel/status/1407884847935373312",
+            "tags": "CobaltStrike",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "150046": [
+        {
+            "ioc_value": "naviconscs.bid",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-23 12:19:36",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "150052": [
+        {
+            "ioc_value": "backpackgrey.online",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-23 12:19:36",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "150051": [
+        {
+            "ioc_value": "contocontinue.agency",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-23 12:19:36",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "150050": [
+        {
+            "ioc_value": "feelingsfreshr.space",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-23 12:19:36",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "150049": [
+        {
+            "ioc_value": "extrimesuofki.top",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-23 12:19:36",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "150048": [
+        {
+            "ioc_value": "jackshanter.top",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-23 12:19:36",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ],
+    "150047": [
+        {
+            "ioc_value": "12horroser.fun",
+            "ioc_type": "domain",
+            "threat_type": "botnet_cc",
+            "malware": "win.icedid",
+            "malware_alias": "BokBot,IceID",
+            "malware_printable": "IcedID",
+            "first_seen_utc": "2021-06-23 12:19:36",
+            "last_seen_utc": null,
+            "confidence_level": 100,
+            "reference": null,
+            "tags": "IcedID",
+            "anonymous": "0",
+            "reporter": "abuse_ch"
+        }
+    ]
+}
