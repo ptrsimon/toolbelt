@@ -6,16 +6,12 @@ import json
 import os
 import time
 import datetime
-
-alertfile = "alerts.json"
-acklogfile = "ack.log"
-baseurl = "http://localhost:8000/"
-version = "20210708-siem"
+import config
 
 class List:
     def on_get(self, req, resp):
         # Load existing alerts
-        with open(alertfile) as fh:
+        with open(config.alertfile) as fh:
             alerts = json.loads(fh.read())
 
         # Check alert data
@@ -31,7 +27,7 @@ class List:
                     resp.media = media
                     return
         
-        # Enrich alerts with Nagios data
+        # Enrich alerts with Nagios data and count
         for i in alerts:
             i["flags"] = 11
             i["host_alive"] = 1
@@ -41,11 +37,15 @@ class List:
             hours, remainder = divmod(delta.seconds, 3600)
             minutes, seconds = divmod(remainder, 60)
             i["duration"] = "{}d {}h {}m {}s".format(delta.days, hours, minutes, seconds)
-            i["ack_url"] = baseurl + "ack/" + str(i.pop("id", None))
+            i["ack_url"] = config.baseurl + "ack/" + str(i.pop("id", None))
+            if i["count"] > 1:
+                i["plugin_output"] += " (repeated: {}x)".format(i.pop("count", None))
+            else:
+                i.pop("count")
         
         # Construct response
         response = {}
-        response["version"] = version
+        response["version"] = config.version
         response["running"] = 1
         response["servertime"] = int(time.time())
         response["data"] = alerts
@@ -66,8 +66,8 @@ class Create:
                 return
         
         # Load existing alerts if any
-        if os.path.exists(alertfile):
-            with open(alertfile) as fh:
+        if os.path.exists(config.alertfile):
+            with open(config.alertfile) as fh:
                 alerts = json.loads(fh.read())
         else:
             alerts = []
@@ -83,10 +83,22 @@ class Create:
         newalert = req.media
         newalert["id"] = alertid
         newalert["last_state_change"] = int(time.time())
+        newalert["count"] = 1
+
+        # Check for duplicates
+        duplicate = False
+        for i in alerts:
+            if i["plugin_output"] == newalert["plugin_output"] and \
+                i["service"] == newalert["service"] and \
+                i["status"] == newalert["status"] and \
+                i["hostname"] == newalert["hostname"]:
+                i["count"] += 1
+                duplicate = True
 
         # Write alerts file
-        alerts.append(newalert)
-        with open(alertfile, "w+") as fh:
+        if duplicate == False:
+            alerts.append(newalert)
+        with open(config.alertfile, "w+") as fh:
             fh.write(json.dumps(alerts))
 
 class Ack:
@@ -104,13 +116,13 @@ class Ack:
                 return
 
         # Log ack
-        with open(acklogfile, "a+") as fh:
+        with open(config.acklogfile, "a+") as fh:
             ack = req.media
             fh.write("Alert {} acknowledged by {} from {}\n".format(alert_id, ack["user_ad"], ack["user_ip"]))
 
 
         # Load existing alerts
-        with open(alertfile) as fh:
+        with open(config.alertfile) as fh:
             alerts = json.loads(fh.read())
 
         # Delete alert with matching ID
@@ -119,7 +131,7 @@ class Ack:
                 alerts.remove(i)
 
         # Write alerts file
-        with open(alertfile, "w") as fh:
+        with open(config.alertfile, "w") as fh:
             fh.write(json.dumps(alerts))
 
 app = falcon.App()
