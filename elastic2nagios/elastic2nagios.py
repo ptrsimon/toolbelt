@@ -3,6 +3,7 @@
 
 import falcon
 import json
+import re
 import os
 import time
 import datetime
@@ -64,6 +65,17 @@ class Create:
                 resp.status = falcon.HTTP_400
                 resp.media = media
                 return
+
+        # Input check
+        forbidden_chars = re.compile('[<>;]')
+        if forbidden_chars.search(req.media["plugin_output"]) != None:
+            media = {
+                "error": "Invalid character in plugin_output",
+                "status": 400
+            }
+            resp.status = falcon.HTTP_400
+            resp.media = media
+            return
         
         # Load existing alerts if any
         if os.path.exists(config.alertfile):
