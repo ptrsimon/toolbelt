@@ -130,7 +130,8 @@ class Ack:
         # Log ack
         with open(config.acklogfile, "a+") as fh:
             ack = req.media
-            fh.write("Alert {} acknowledged by {} from {}\n".format(alert_id, ack["user_ad"], ack["user_ip"]))
+            timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+            fh.write("[{}] Alert {} acknowledged by {} from {}\n".format(timestamp, alert_id, ack["user_ad"], ack["user_ip"]))
 
 
         # Load existing alerts
