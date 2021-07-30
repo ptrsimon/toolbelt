@@ -41,4 +41,8 @@ def render_decoders(path, patterns):
     return
 
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("USAGE: wazuhgrok.py PATTERNFILE DECODERFILE")
+        sys.exit()
+
     render_decoders(sys.argv[2], get_patterns(sys.argv[1]))
