@@ -7,4 +7,5 @@ Misc stuff to help with some tasks.
  - memcache\_preload - load a CSV file into memcached.
  - misp2elastic - perform retrospective analysis and enrichment on Elasticsearch data based on threat intelligence from MISP (WIP).
  - threatfox\_to\_logstash - convert a ThreatFox domain database to a format easily readable by the Logstash translate filter.
- - wazuhtree - visualize Wazuh rule decision trees using graphviz
+ - wazuhgrok - render Grok patterns to regexes (use case: ease writing Wazuh decoders with utilizing existing Grok patterns).
+ - wazuhtree - visualize Wazuh rule decision trees using graphviz.
