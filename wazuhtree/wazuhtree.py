@@ -22,21 +22,33 @@ def read_rules(ruledir):
             for group in rules.iter():
                 if group.tag == "group":
                     for rule in group:
+                        ruledata = {}
+                        depends = False
                         for param in rule:
                             if param.tag == "if_sid" or param.tag == "if_matched_sid":
                                 for depid in param.text.split(','):
-                                    ruledict[rule.attrib['id']] = depid
+                                    ruledata['depid'] = depid
+                                    depends = True
+                            if param.tag == "description":
+                                ruledata['description'] = param.text
+                            if param.tag == "hostname":
+                                ruledata['hostname'] = param.text
+                        if depends == True: # only add rules that are part of a dependency tree
+                            ruledict[rule.attrib['id']] = ruledata
     
     return ruledict
 
 def buildgraph(ruledict):
-    tree = graphviz.Digraph(comment="The tree", graph_attr={'splines': 'ortho'})
+    tree = graphviz.Digraph(comment="The tree", graph_attr={'splines': 'ortho', 'ratio': 'expand'})
     
     for id in ruledict.keys():
-        tree.node(id, id)
-    for id, dep in ruledict.items():
-        print(id, dep)
-        tree.edge(dep, id, constraint='true')
+        if "hostname" in ruledict[id]:
+            tree.node(id, id + "\nHostname filter: " + ruledict[id]['hostname'] + "\n" + ruledict[id]['description'])
+        else:
+            tree.node(id, id + "\n" + ruledict[id]['description'])
+    for id, data in ruledict.items():
+        print(id, data['depid'])
+        tree.edge(data['depid'], id, constraint='true')
 
     return tree.unflatten(stagger=10)
 
