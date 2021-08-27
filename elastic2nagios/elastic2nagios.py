@@ -127,25 +127,31 @@ class Ack:
                 resp.media = media
                 return
 
-        # Log ack
-        with open(config.acklogfile, "a+") as fh:
-            ack = req.media
-            timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-            fh.write("[{}] Alert {} acknowledged by {} from {}\n".format(timestamp, alert_id, ack["user_ad"], ack["user_ip"]))
-
-
         # Load existing alerts
         with open(config.alertfile) as fh:
             alerts = json.loads(fh.read())
 
         # Delete alert with matching ID
+        deleted_alert = {}
         for i in alerts:
             if i["id"] == alert_id:
+                deleted_alert = i
                 alerts.remove(i)
 
         # Write alerts file
         with open(config.alertfile, "w") as fh:
             fh.write(json.dumps(alerts))
+
+        # Log ack
+        with open(config.acklogfile, "a+") as fh:
+            ack = req.media
+            timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+            fh.write("[{}] Alert {} acknowledged by {} from {}. Data: hostname={} service={} plugin_output={}\n".format(timestamp, alert_id, ack["user_ad"], ack["user_ip"], deleted_alert["hostname"], deleted_alert["service"], deleted_alert["plugin_output"]))
+
+        # Set resp
+        resp.media = {"success": "true"}
+        resp.status = falcon.HTTP_200
+        return
 
 app = falcon.App()
 app.add_route('/list', List())
