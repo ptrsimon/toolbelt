@@ -14,7 +14,11 @@ class List:
         with open(config.alertfile) as fh:
             alerts = json.loads(fh.read())
 
-        required = [ "plugin_output", "service", "status", "hostname", "id", "last_state_change"]
+        for i in alerts:
+            if "hostname" not in i:
+                i["hostname"] = "none"
+
+        required = [ "plugin_output", "service", "status", "id", "last_state_change"]
         for i in alerts:
             for j in required:
                 if j not in i:

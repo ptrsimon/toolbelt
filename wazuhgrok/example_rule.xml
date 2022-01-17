@@ -1,5 +1,0 @@
-<decoder name="example-log-decoder">
-    <prematch>^Login from %{IP}$</prematch>
-    <regex type="pcre2">^Login from (%{IP})</regex>
-    <order>srcip</order>
-</decoder>
