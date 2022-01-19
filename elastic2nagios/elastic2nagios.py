@@ -5,6 +5,7 @@ import falcon
 import json
 import re
 import os
+import socket
 import time
 import datetime
 import config
@@ -59,6 +60,14 @@ class Create:
                 alerts = json.loads(fh.read())
         else:
             alerts = []
+
+        # Nagios dashboard flood protection - limit total visible alerts to 100
+        if len(alerts) == 100:
+            newalert = {}
+            newalert["plugin_output"] = "Flood protection: not displaying alert because there are 100 alerts already"
+            newalert["service"] = "elastic2nagios"
+            newalert["hostname"] = socket.gethostname()
+            newalert["status"] = "CRITICAL"
 
         alertid = 0
         for i in alerts:
