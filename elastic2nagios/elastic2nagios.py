@@ -70,6 +70,10 @@ class Create:
         newalert["last_state_change"] = int(time.time())
         newalert["count"] = 1
 
+        # Truncate alert to 500 characters
+        if len(newalert["plugin_output"]) > 500:
+            newalert["plugin_output"] = newalert["plugin_output"][:500] + "..."
+
         duplicate = False
         for i in alerts:
             if i["plugin_output"] == newalert["plugin_output"] and \
