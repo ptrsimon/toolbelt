@@ -61,10 +61,10 @@ class Create:
         else:
             alerts = []
 
-        # Nagios dashboard flood protection - limit total visible alerts to 100
+        # Nagios dashboard flood protection - limit total visible alerts to 30
         if len(alerts) >= 30:
             newalert = {}
-            newalert["plugin_output"] = "Flood protection: not displaying alert because there are 100 alerts already"
+            newalert["plugin_output"] = "Flood protection: not displaying alert because there are 30 alerts already"
             newalert["service"] = "elastic2nagios"
             newalert["hostname"] = socket.gethostname()
             newalert["status"] = "CRITICAL"
