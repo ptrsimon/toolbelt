@@ -1,8 +1,7 @@
-# threatfox_to_logstash.py - take a ThreatFox domain JSON database dump and
-# convert it to a Logstash-friendly format. It can be parsed by the translate
-# plugin.
+# threatfox2logstash.py - convert a ThreatFox domain database dump to a Logstash-friendly format. 
+# It can be parsed by the translate plugin.
 #
-# Usage: threatfox_to_logstash.py domains.json [outfile.json]
+# Usage: threatfox2logstash.py domains.json [outfile.json]
 
 import json
 import sys

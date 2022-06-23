@@ -1,10 +1,10 @@
-# cisa_evd_to_logstash.py - take a CISA Known Exploited Vulnerabilities Database dump
-# and convert it to a Logstash-friendly format. It can be parsed by the translate
-# plugin.
+# evd2logstash.py - convert a CISA Known Exploited Vulnerabilities Database dump
+# to a Logstash-friendly format.
+# It can be parsed by the translate plugin.
 #
 # CISA DB: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
 #
-# Usage: cisa_evd_to_logstash.py cisa_exampledb.json [outfile.json]
+# Usage: evd2logstash.py cisa_exampledb.json [outfile.json]
 
 import json
 import sys
