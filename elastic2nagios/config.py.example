@@ -1,0 +1,12 @@
+alertfile = "alerts.json"
+acklogfile = "ack.log"
+baseurl = "http://localhost:8000/"
+version = "20221111-siem"
+
+# hide sensitive data
+replacements = [
+    {
+        pattern=r'user: (\S{1,3}).*$',
+        repl=r'user: \1****'
+    }
+]

@@ -9,6 +9,7 @@ import socket
 import time
 import datetime
 import config
+import re
 
 class List:
     def on_get(self, req, resp):
@@ -68,6 +69,20 @@ class Create:
             newalert["service"] = "elastic2nagios"
             newalert["hostname"] = socket.gethostname()
             newalert["status"] = "CRITICAL"
+
+        # host whitelisting
+        if hasattr(config, "whitelist"):
+            for i in config.whitelist:
+                if re.match(i, newalert["hostname"]):
+                    return
+
+        # alert text replacement
+        if hasattr(config, "replacements"):
+            for i in config.replacements:
+                newalert["plugin_output"] = re.sub(
+                        pattern=i["pattern"],
+                        repl=i["repl"],
+                        string=newalert["plugin_output"])
 
         alertid = 0
         for i in alerts:
