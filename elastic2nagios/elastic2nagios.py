@@ -62,8 +62,8 @@ class Create:
         else:
             alerts = []
 
-        # Nagios dashboard flood protection - limit total visible alerts to 30
-        if len(alerts) >= 30:
+        # Nagios dashboard flood protection - limit total visible alerts to 50
+        if len(alerts) >= 50:
             alerts.pop(0)
 
         # host whitelisting
