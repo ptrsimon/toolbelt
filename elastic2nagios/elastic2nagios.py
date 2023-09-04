@@ -64,11 +64,12 @@ class Create:
 
         # Nagios dashboard flood protection - limit total visible alerts to 30
         if len(alerts) >= 30:
-            newalert = {}
-            newalert["plugin_output"] = "Flood protection: not displaying alert because there are 30 alerts already"
-            newalert["service"] = "elastic2nagios"
-            newalert["hostname"] = socket.gethostname()
-            newalert["status"] = "CRITICAL"
+            #newalert = {}
+            #newalert["plugin_output"] = "Flood protection: not displaying alert because there are 30 alerts already"
+            #newalert["service"] = "elastic2nagios"
+            #newalert["hostname"] = socket.gethostname()
+            #newalert["status"] = "CRITICAL"
+            alerts.pop()
 
         # host whitelisting
         if hasattr(config, "whitelist"):
