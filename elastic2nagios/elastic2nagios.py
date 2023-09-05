@@ -63,8 +63,16 @@ class Create:
             alerts = []
 
         # Nagios dashboard flood protection - limit total visible alerts to 50
-        if len(alerts) >= 50:
-            alerts.pop(0)
+        if len(alerts) >= 5:
+            if alerts[0]["plugin_output"] == "more alerts":
+                alerts.pop(1)
+                alerts[0]["count"] + 1
+            else:
+                alerts.pop(0)
+                alerts.insert(0,
+                        {"hostname": "none", "service": "elastic2nagios", "status": "WARNING", "plugin_output": "more alert", "id": 0, "last_state_change": alerts[0]["last_state_change"] - 1, "count": 1}
+                )
+
 
         # host whitelisting
         if hasattr(config, "whitelist"):
