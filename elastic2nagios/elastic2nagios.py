@@ -63,7 +63,7 @@ class Create:
             alerts = []
 
         # Nagios dashboard flood protection - limit total visible alerts to 50
-        if len(alerts) >= 5:
+        if len(alerts) >= 50:
             if alerts[0]["plugin_output"] == "more alerts":
                 alerts.pop(1)
                 alerts[0]["count"] + 1
