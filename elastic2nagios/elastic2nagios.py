@@ -70,7 +70,7 @@ class Create:
             else:
                 alerts.pop(0)
                 alerts.insert(0,
-                        {"hostname": "none", "service": "elastic2nagios", "status": "WARNING", "plugin_output": "more alert", "id": 0, "last_state_change": alerts[0]["last_state_change"] - 1, "count": 1}
+                        {"hostname": "none", "service": "elastic2nagios", "status": "WARNING", "plugin_output": "more alerts", "id": 0, "last_state_change": alerts[0]["last_state_change"] - 1, "count": 1}
                 )
 
 
